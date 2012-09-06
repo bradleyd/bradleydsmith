@@ -1,0 +1,9 @@
+<% content_for :title, "Bradley D Smith" %>
+
+<p>
+  Last Post
+</p>
+<p>
+<%= @post.try(:title) %><br />
+  <%= @post.try(:content) %>
+</p>
