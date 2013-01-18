@@ -1,9 +1,44 @@
 <% content_for :title, "Bradley D Smith" %>
 
-<p>
-  Last Post
-</p>
-<p>
-<%= @post.try(:title) %><br />
-  <%= @post.try(:content) %>
-</p>
+<!-- Feed -->
+
+<div class="eight mobile-two push-two-mobile columns">
+
+  <h4>Blog</h4><hr/>
+  <% @posts.each do |post| %>
+  <div class="panel">
+    <h5><%= link_to post.title, post %></h5>
+
+    <h6 class="subheader">
+      <%= truncate(post.content) %>
+    </h6>
+
+    <h6><%= link_to 'Read More »', post%></h6>
+  </div>
+  <% end %>
+</div>
+
+<!-- End Feed -->
+
+ <!-- Sidebar -->
+
+    <aside class="three columns">
+
+      <h5>Categories</h5>
+      <ul class="side-nav">
+        <li><a href="#">News</a></li>
+        <li><a href="#">Code</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Fun</a></li>
+        <li><a href="#">Weasels</a></li>
+      </ul>
+
+      <div class="panel">
+        <h5>Featured</h5>
+        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+        <a href="#">Read More &rarr;</a>
+      </div>
+
+    </aside>
+
+    <!-- End Sidebar -->

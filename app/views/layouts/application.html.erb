@@ -4,14 +4,19 @@
   <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'layouts/nav' %>
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
+ <% flash.each do |name, msg| %>
+   <%= content_tag :div, msg, id: "flash_#{name}", class: "alert-box #{    name}" %>
+ <% end %>
 
-<%= yield %>
+ <div class="row">
+   <%= yield %>
+ </div>
 
+  <%= render 'layouts/footer' %>
 </body>
 </html>

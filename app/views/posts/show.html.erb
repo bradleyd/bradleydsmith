@@ -1,20 +1,26 @@
-<p id="notice"><%= notice %></p>
+ <!-- Main Blog Content -->
+    <div class="nine columns" role="content">
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+      <article>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+        <h3><%= @post.title %></h3>
+        <h6>Written by <%= @post.name %> on August 12, 2012.</h6>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
+        <div class="row">
+          <div class="six columns">
+            <p><%= @post.content %> </p>
+         </div>
+          <div class="six columns">
+            <img src="http://placehold.it/400x240&text=[img]" />
+          </div>
+        </div>
+
+        <p>this is more area to write in </p>
+        <p>this is even more area to write in </p>
 
 
+      </article>
+
+      <hr />
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
