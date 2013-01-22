@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120906182934) do
+ActiveRecord::Schema.define(:version => 20130122185035) do
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"
@@ -19,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120906182934) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
   create_table "users", :force => true do |t|
@@ -42,6 +53,12 @@ ActiveRecord::Schema.define(:version => 20120906182934) do
     t.string   "authentication_token"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "fname"
+    t.string   "lname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

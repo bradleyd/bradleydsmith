@@ -11,7 +11,7 @@
             <p><%= @post.content %> </p>
          </div>
           <div class="six columns">
-            <img src="http://placehold.it/400x240&text=[img]" />
+            <%= image_tag @post.image_url(:fourbytwo) if @post.image? %>
           </div>
         </div>
 

@@ -13,7 +13,7 @@
             <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
           </div>
           <div class="six columns">
-            <img src="http://placehold.it/400x240&text=[img]" />
+            <%= image_tag post.image_url(:fourbytwo) if post.image? %>
           </div>
         </div>
 
@@ -39,12 +39,6 @@
         <li><a href="#">Fun</a></li>
         <li><a href="#">Weasels</a></li>
       </ul>
-
-      <div class="panel">
-        <h5>Featured</h5>
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-        <a href="#">Read More &rarr;</a>
-      </div>
 
     </aside>
 
