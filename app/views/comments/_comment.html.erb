@@ -2,7 +2,9 @@
 <div class="panel">
 <p>
   <b>Commenter:</b>
-  <%= comment.commenter %>
+ <%= comment.commenter %> 
+ <em>on <%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></em>
+
 </p>
  
 <p>

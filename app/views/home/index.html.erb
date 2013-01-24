@@ -13,6 +13,7 @@
       <%= truncate(post.content) %>
     </h6>
 
+    <h6> There are <%= post.comments.size %> comment(s) </h6>
     <h6><%= link_to 'Read More »', post%></h6>
   </div>
   <% end %>
