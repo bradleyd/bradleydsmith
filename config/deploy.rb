@@ -1,6 +1,6 @@
 require "bundler/capistrano" 
 
-server "192.168.70.227", :web, :app, :db, primary: true
+server "ec2-50-17-105-2.compute-1.amazonaws.com", :web, :app, :db, primary: true
 set :application, "bradleydsmith"
 set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
@@ -13,7 +13,7 @@ set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "rails.pem")]
 #after "deploy", "deploy:cleanup" # keep only the last 5 releases
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy", "deploy:cleanup"
@@ -27,9 +27,9 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    #sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     run "chmod +x #{current_path}/config/unicorn_init.sh"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_init.sh"
+    #sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_init.sh"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
