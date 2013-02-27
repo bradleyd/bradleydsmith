@@ -1,6 +1,6 @@
 require "bundler/capistrano" 
 
-server "ec2-50-17-105-2.compute-1.amazonaws.com", :web, :app, :db, primary: true
+server "107.20.252.204", :web, :app, :db, primary: true
 set :application, "bradleydsmith"
 set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
