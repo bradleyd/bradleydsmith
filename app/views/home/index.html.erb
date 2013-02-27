@@ -7,13 +7,13 @@
   <h4>Blog</h4><hr/>
   <% @posts.each do |post| %>
   <div class="panel">
-    <h5><%= link_to post.title, post %></h5>
+    <h5><%= link_to post.try(:title), post %></h5>
 
     <h6 class="subheader">
       <%= truncate(strip_tags(post.content)) %>
     </h6>
 
-    <h6> There are <%= post.comments.size %> comment(s) </h6>
+    <h6> There are <%= post.try(:comments).size %> comment(s) </h6>
     <h6><%= link_to 'Read More »', post%></h6>
   </div>
   <% end %>
@@ -37,7 +37,7 @@
 
       <div class="panel">
         <h5>Featured</h5>
-        <p><%= @random.title %> </p>
+        <p><%= @random.try(:title) %> </p>
         <%= link_to "Read More...", @random %>
       </div>
 
