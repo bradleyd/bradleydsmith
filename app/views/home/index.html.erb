@@ -10,7 +10,7 @@
     <h5><%= link_to post.title, post %></h5>
 
     <h6 class="subheader">
-      <%= truncate(post.content) %>
+      <%= truncate(strip_tags(post.content)) %>
     </h6>
 
     <h6> There are <%= post.comments.size %> comment(s) </h6>
@@ -37,8 +37,8 @@
 
       <div class="panel">
         <h5>Featured</h5>
-        <p><%= truncate(@random.content) %> </p>
-        <a href="#">Read More &rarr;</a>
+        <p><%= @random.title %> </p>
+        <%= link_to "Read More...", @random %>
       </div>
 
     </aside>

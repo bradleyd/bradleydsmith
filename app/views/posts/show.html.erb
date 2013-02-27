@@ -8,7 +8,7 @@
 
         <div class="row">
           <div class="six columns">
-            <p><%= @post.content %> </p>
+            <p><%= raw @post.content %> </p>
          </div>
           <div class="six columns">
             <%= image_tag @post.image_url(:fourbytwo) if @post.image? %>
