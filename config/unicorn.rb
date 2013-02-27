@@ -9,7 +9,7 @@ worker_processes 1
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-root = "/home/deploy/bradleydsmith"
+root = "/home/deploy/apps/bradleydsmith/current"
 working_directory root
 
 # listen on both a Unix domain socket and a TCP port,
