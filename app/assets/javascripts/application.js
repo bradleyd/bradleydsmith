@@ -15,3 +15,5 @@
 //= require foundation
 //= require tinymce-jquery
 //= require_tree .
+
+//$(document).foundation();
