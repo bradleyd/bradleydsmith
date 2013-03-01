@@ -1,23 +1,22 @@
 <% unless comment.new_record? %>
-<div class="comments">
-  <h5>Two comments</h5>
+  <div class="comments">
+    <h5>Two comments</h5>
 
-  <div class="comment">
-  <div class="avatar">
-    <img src="img/avatar.png" alt="Avatar">
-    <%= comment.commenter %> 
+    <div class="comment">
+      <div class="avatar">
+        <%= image_tag "avatar.png", alt: "Avatar" %>
+      </div>
+        <h5><%= comment.commenter %></h5>  
+      <span class="comment-date"><%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></span>
+
+        <p><%= comment.body %></p>
+    </div>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Destroy Comment', [comment.post, comment],
+        :confirm => 'Are you sure?',
+        :method => :delete, class: "alert button" %>
+      </p>
+    <%end%>
   </div>
-  <h5>Name</h5>
- <span class="comment-date"><%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></span>
-
-  <p><%= comment.body %></p>
- </div>
-
-<% if user_signed_in? %>
-<%= link_to 'Destroy Comment', [comment.post, comment],
-  :confirm => 'Are you sure?',
-  :method => :delete, class: "alert button" %>
-</p>
-<%end%>
-</div>
 <%end%>

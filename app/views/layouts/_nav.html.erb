@@ -1,22 +1,31 @@
- <header>
- <div class="menubutton">
-   <i class="icon-reorder"></i>
- </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="archive.html">ARCHIVE</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li class="search"><i class="icon-search"></i><i class="icon-remove"></i></li>
-      </ul>
+<header>
+<div class="menubutton">
+  <i class="icon-reorder"></i>
+</div>
+<nav>
+<ul>
+  <li><%= link_to "HOME", root_path %></li>
+  <li><%= link_to "ABOUT", home_about_path %></li>
+  <li><%= link_to "ARCHIVE", "#" %></li>
+  <li><%= link_to "CONTACT", home_contact_path %></li>
+  <li class="search">
+  <i class="icon-search"></i>
+  <i class="icon-remove"></i>
+  </li>
+  <% if user_signed_in? %>
+    <li><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>
+    <li><%= link_to('Edit account', '#' ) %></li>
+  <% else %>
+    <li><%= link_to('Login', new_user_session_path) %></li>
+  <% end %>
+</ul>
 
-      <div class="search_popup">
-        <form>
-          <input type="text" value="Search..." onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}"></input>
-          <button type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    <br class="clear" />
-  </header>
+<div class="search_popup">
+  <form>
+    <input type="text" value="Search..." onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}"></input>
+    <button type="submit">Search</button>
+  </form>
+</div>
+</nav>
+<br class="clear" />
+</header>

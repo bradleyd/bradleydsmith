@@ -5,9 +5,9 @@
     <span class="post_date">Post date</span>
   <% end %>
 
-  <p><%= image_tag @post.image_url(:fourbytwo), class: "float_right" if @post.image? %></p>
 
   <p><%= raw(@post.content) %></p>
+  <p><%= image_tag @post.image_url(:fourbytwo), class: "float_right" if @post.image? %></p>
 
   <div class="metadata">
     <span><i class="icon-pencil"></i><a href="archive.html">Writer</a></span>
@@ -22,10 +22,10 @@
   </div>
 
 </div>
-<br class="clear" />
 
   <% if user_signed_in? %>
     <%= link_to 'Edit', edit_post_path(@post) %> |
   <% end %>
   <%= link_to 'Back', posts_path %>
+<br class="clear" />
 </section> 
