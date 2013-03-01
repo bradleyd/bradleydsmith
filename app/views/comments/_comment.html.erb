@@ -15,7 +15,7 @@
     <% if user_signed_in? %>
       <%= link_to 'Destroy Comment', [comment.post, comment],
         :confirm => 'Are you sure?',
-        :method => :delete, class: "alert button" %>
+        :method => :delete, class: "button destroy" %>
       </p>
     <%end%>
   </div>

@@ -5,10 +5,10 @@
 <div class="eight columns">
   <h4 class="post_title"><%= link_to post.try(:title), post %></h4>
   <%= link_to "#" do %>
-    <span class="post_date">Post date</span>
+    <span class="post_date"><%= post.try(:created_at) %></span>
   <% end %>
 
-  <p><%= truncate(strip_tags(post.content)) %></p>
+  <p><%= truncate(strip_tags(post.try(:content))) %></p>
 
   <%= link_to post do %>
      <button class="float_right">READ MORE</button>
