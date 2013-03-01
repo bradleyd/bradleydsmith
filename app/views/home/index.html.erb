@@ -2,12 +2,12 @@
 
 <!-- Feed -->
 
-<div class="eight mobile-two push-two-mobile columns">
-
+<div class="large-9 columns" role="content">
+   
   <h4>Blog</h4><hr/>
   <% @posts.each do |post| %>
-  <div class="panel">
-    <h5><%= link_to post.try(:title), post %></h5>
+    <article>
+    <h3><%= link_to post.try(:title), post %></h5>
 
     <h6 class="subheader">
       <%= truncate(strip_tags(post.content)) %>
@@ -15,7 +15,7 @@
 
     <h6> There are <%= post.try(:comments).size %> comment(s) </h6>
     <h6><%= link_to 'Read More »', post%></h6>
-  </div>
+  </article>
   <% end %>
 </div>
 

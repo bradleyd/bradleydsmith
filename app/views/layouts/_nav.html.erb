@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="twelve columns">
+  <div class="large-12 columns">
 
     <!-- Navigation -->
 
     <div class="row">
-      <div class="twelve columns">
+      <div class="large-12 columns">
 
         <ul class="top-bar">
 
@@ -14,7 +14,7 @@
           </ul>
 
           <section>
-         <ul class="right">
+          <ul class="right">
             <li class="has-dropdown">
             <%= link_to 'settings', '#' %>
 
@@ -22,9 +22,9 @@
               <% if user_signed_in? %>
                 <li><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>
                 <li><%= link_to('Edit account', '#' ) %></li>
-<% else %>
-  <li><%= link_to('Login', new_user_session_path) %></li>
-<% end %>
+              <% else %>
+                <li><%= link_to('Login', new_user_session_path) %></li>
+              <% end %>
 
             </ul>
           </ul>
