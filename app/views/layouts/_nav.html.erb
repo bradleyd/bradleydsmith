@@ -8,17 +8,24 @@
   <li><%= link_to "ABOUT", home_about_path %></li>
   <li><%= link_to "ARCHIVE", "#" %></li>
   <li><%= link_to "CONTACT", home_contact_path %></li>
-  <li class="search">
-  <i class="icon-search"></i>
-  <i class="icon-remove"></i>
+  <li class='search login'>
+    <i class="icon-user"></i>
   </li>
-  <% if user_signed_in? %>
+<li class="search">
+    <i class="icon-search"></i>
+    <i class="icon-remove"></i>
+  </li>
+
+</ul>
+
+<div class="login_dropdown">
+   <% if user_signed_in? %>
     <li><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>
     <li><%= link_to('Edit account', '#' ) %></li>
   <% else %>
     <li><%= link_to('Login', new_user_session_path) %></li>
   <% end %>
-</ul>
+</div>
 
 <div class="search_popup">
   <form>

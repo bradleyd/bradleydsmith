@@ -17,4 +17,5 @@ $ ->
   $('.menubutton').click ->
    	$('header nav').slideToggle '', (-> $(this))
 
-
+  $('.login').click ->
+    $('header .login_dropdown').slideToggle '', (-> $(this))
