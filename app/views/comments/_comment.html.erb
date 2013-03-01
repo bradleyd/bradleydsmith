@@ -1,18 +1,17 @@
 <% unless comment.new_record? %>
-<div class="panel">
-<p>
-  <b>Commenter:</b>
- <%= comment.commenter %> 
- <em>on <%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></em>
+<div class="comments">
+  <h5>Two comments</h5>
 
-</p>
- 
-<p>
-  <b>Comment:</b>
-  <%= comment.body %>
-</p>
+  <div class="comment">
+  <div class="avatar">
+    <img src="img/avatar.png" alt="Avatar">
+    <%= comment.commenter %> 
+  </div>
+  <h5>Name</h5>
+ <span class="comment-date"><%= comment.created_at.strftime('%b %d, %Y at %H:%M') %></span>
 
-<p>
+  <p><%= comment.body %></p>
+ </div>
 
 <% if user_signed_in? %>
 <%= link_to 'Destroy Comment', [comment.post, comment],

@@ -3,4 +3,12 @@ class HomeController < ApplicationController
     @posts  = Post.includes(:comments).paginate(:page => params[:page], :per_page => 15)
     @random = Post.last 
   end
+
+  def about
+
+  end
+
+  def contact
+    
+  end
 end

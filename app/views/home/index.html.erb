@@ -1,46 +1,20 @@
 <% content_for :title, "Bradley D Smith" %>
 
-<!-- Feed -->
-
-<div class="large-9 columns" role="content">
-   
-  <h4>Blog</h4><hr/>
-  <% @posts.each do |post| %>
-    <article>
-    <h3><%= link_to post.try(:title), post %></h5>
-
-    <h6 class="subheader">
-      <%= truncate(strip_tags(post.content)) %>
-    </h6>
-
-    <h6> There are <%= post.try(:comments).size %> comment(s) </h6>
-    <h6><%= link_to 'Read More »', post%></h6>
-  </article>
+<% @posts.each do |post| %>
+<section>
+<div class="eight columns">
+  <h4 class="post_title"><%= link_to post.try(:title), post %></h4>
+  <%= link_to "#" do %>
+    <span class="post_date">Post date</span>
   <% end %>
+
+  <p><%= truncate(strip_tags(post.content)) %></p>
+
+  <%= link_to post do %>
+     <button class="float_right">READ MORE</button>
+  <% end %> 
+
 </div>
-
-<!-- End Feed -->
-
- <!-- Sidebar -->
-
-    <aside class="three columns">
-
-      <h5>Categories</h5>
-      <ul class="side-nav">
-        <li><%= link_to "Blog", posts_path %></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Code</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Fun</a></li>
-        <li><a href="#">Weasels</a></li>
-      </ul>
-
-      <div class="panel">
-        <h5>Featured</h5>
-        <p><%= @random.try(:title) %> </p>
-        <%= link_to "Read More...", @random %>
-      </div>
-
-    </aside>
-
-    <!-- End Sidebar -->
+<br class="clear">
+</section>
+<% end %>

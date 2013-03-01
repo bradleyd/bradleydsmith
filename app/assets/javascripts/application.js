@@ -13,7 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require tinymce-jquery
-//= require foundation
 //= require_tree .
-
-$(document).foundation();
