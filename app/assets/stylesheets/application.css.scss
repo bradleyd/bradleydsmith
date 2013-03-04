@@ -16,7 +16,7 @@
 
 /*      --------------------------------------------------
 Alerts
--------------------------------------------------- */
+-------------------------------------------------- 
 
 div.alert-box { 
   display: block; 
@@ -33,11 +33,11 @@ div.alert-box {
   position: relative; 
 }
 
-.alert-box.success { background-color: #7fae00; color: #fff; text-shadow: 0 -1px rgba(195, 221, 171); }
-.alert-box.notice { background-color: #7fae00; color: #fff; text-shadow: 0 -1px rgba(195, 221, 171); }
+.alert-box.success { background-color: #7fae00; color: #fff; text-shadow: 0 -1px rgba(0,128,0,0.3); } 
+.alert-box.notice { background-color: #7fae00; color: #fff; text-shadow: 0 -1px rgba(0,128,0,0.3); } 
 .alert-box.warning { background-color: #f68b01; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
 .alert-box.error { background-color: #c00000; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
 .alert-box.alert { background-color: #c00000; color: #fff; text-shadow: 0 -1px rgba(0,0,0,0.3); }
 
 .alert-box a.close { color: #000; position: absolute; right: 4px; top: 0; font-size: 18px; opacity: 0.2; padding: 4px; }
-.alert-box a.close:hover,.alert-box a.close:focus { opacity: 0.4; }
+.alert-box a.close:hover,.alert-box a.close:focus { opacity: 0.4; } */
