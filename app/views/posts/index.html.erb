@@ -1,41 +1,39 @@
 <% content_for :title, "Posts" %>
- <!-- Main Blog Content -->
-    <div class="nine columns" role="content">
-      <% @posts.each do |post| %>
-      <article>
+<!-- Main Blog Content -->
+<div class="nine columns" role="content">
+  <% @posts.each do |post| %>
+    <article>
 
-        <h3><%= link_to post.title, post%></h3>
-        <h6>Written by <%= post.name %></h6>
+    <h3><%= link_to post.title, post%></h3>
+    <h6>Written by <%= post.name %></h6>
 
-        <div class="row">
-          <div class="large-6 columns">
-            <p><%= raw strip_tags(post.content) %></p>
-          </div>
-          <div class="large-6 columns">
-            <%= image_tag post.image_url(:fourbytwo) if post.image? %>
-          </div>
-        </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <p><%= raw strip_tags(post.content) %></p>
+      </div>
+      <div class="large-6 columns">
+        <%= image_tag post.image_url(:fourbytwo) if post.image? %>
+      </div>
+    </div>
 
-      </article>
+  </article>
 
-      <hr />
+  <hr />
 <% end %>
-<%= link_to 'New Post', new_post_path %>
-<%= will_paginate @posts %>
+  <%= link_to 'New Post', new_post_path %>
+  <%= will_paginate @posts %>
 </div>
- <!-- Sidebar -->
+<!-- Sidebar -->
 
-    <aside class="large-3 columns">
+<aside class="large-3 columns">
 
-      <h5>Categories</h5>
-      <ul class="side-nav">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Code</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Fun</a></li>
-        <li><a href="#">Weasels</a></li>
-      </ul>
+  <h5>Categories</h5>
+  <ul class="side-nav">
+    <li><a href="#">News</a></li>
+    <li><a href="#">Code</a></li>
+    <li><a href="#">Design</a></li>
+  </ul>
 
-    </aside>
+</aside>
 
-    <!-- End Sidebar -->
+<!-- End Sidebar -->

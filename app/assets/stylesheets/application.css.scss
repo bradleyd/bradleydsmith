@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require font-awesome
+ *= require highlight_js/zenburn
  *= require_tree .
  */
 
@@ -41,3 +42,6 @@ div.alert-box {
 
 .alert-box a.close { color: #000; position: absolute; right: 4px; top: 0; font-size: 18px; opacity: 0.2; padding: 4px; }
 .alert-box a.close:hover,.alert-box a.close:focus { opacity: 0.4; } */
+
+
+

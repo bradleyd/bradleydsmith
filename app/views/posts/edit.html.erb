@@ -2,6 +2,13 @@
 <h1>Editing post</h1>
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<br class="clear" />
+<div class="eight columns">
+  <%= link_to @post do %>
+    <button>Show</button>
+  <%end%>
+  <%= link_to posts_path do %>
+    <button>back</button>
+  <%end%>
+</div>
 </section>

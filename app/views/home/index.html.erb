@@ -8,7 +8,7 @@
     <span class="post_date"><%= post.try(:created_at) %></span>
   <% end %>
 
-  <p><%= truncate(strip_tags(post.try(:content))) %></p>
+  <p><%= raw truncate(post.try(:content)) %></p>
 
   <%= link_to post do %>
      <button class="float_right">READ MORE</button>

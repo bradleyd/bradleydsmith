@@ -1,31 +1,41 @@
 <%= tinymce_assets %>
 <div class="eight columns">
-<%= form_for(@post, :html => {:multipart => true}) do |f| %>
-  <% if @post.errors.any? %>
+  <%= form_for(@post, :html => {:multipart => true}) do |f| %>
+    <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
 
+<div class="eight columns">
+  <div class="four columns">
     <h6>Name</h6>
+  </div>
+  <div class="four columns">
     <%= f.text_field :name, class: "required" %>
-    </br>
+  </div>
+  <br class="clear" />
+  </br>
+  <div class="four columns">
     <h6>Title</h6>
-    </br>
+  </div>
+  <div class="four columns">
     <%= f.text_field :title, class: "required" %>
-    </br>
-    <%= f.label :content %><br />
-    <%= f.text_area :content, class: "tinymce", cols: 80, rows: 50 %>
-    <%= tinymce %>
-    <%= f.file_field :image, class: "required" %>
+  </div>
+  <br class="clear" />
+  </br>
+  <%= f.text_area :content, class: "tinymce", cols: 80, rows: 50 %>
+  <%= tinymce %>
+  <%= f.file_field :image, class: "required" %>
 
-    <%= f.submit %>
+  <%= f.submit %>
 <% end %>
 </div>
 <br class="clear" />

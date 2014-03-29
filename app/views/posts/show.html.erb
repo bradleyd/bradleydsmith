@@ -24,9 +24,17 @@
 
 </div>
 
+<br class="clear" />
+<div class="eight columns">
   <% if user_signed_in? %>
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-  <% end %>
-  <%= link_to 'Back', posts_path %>
+    <%= link_to edit_post_path(@post) do %> 
+      <button>Edit</button>
+    <%end%>
+  <%end%>
+  <%= link_to posts_path do %>
+    <button>back</button>
+  <%end%>
+</div>
+
 <br class="clear" />
 </section> 

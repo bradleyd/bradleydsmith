@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.17'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -41,3 +41,4 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+gem 'highlight_js-rails'
